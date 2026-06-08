@@ -1,0 +1,230 @@
+.contact-sec {
+  background: var(--bg2);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4.5rem;
+  align-items: start;
+}
+
+.ctag {
+  font-size: 1.05rem;
+  color: var(--text2);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.citems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.citem {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.1rem 1.4rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.citem:hover {
+  border-color: var(--border3);
+  background: var(--card2);
+  transform: translateX(6px);
+}
+
+.cico {
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.05);
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.clbl {
+  font-size: 0.72rem;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.15rem;
+  font-weight: 700;
+}
+
+.cval {
+  font-size: 0.92rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Contact Form styling */
+.cform {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.2rem;
+  box-shadow: 0 8px 30px var(--shadow);
+}
+
+.frow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+}
+
+.fg {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.fg label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+}
+
+.req {
+  color: var(--accent4);
+  margin-left: 2px;
+}
+
+.opt {
+  color: var(--text3);
+  font-size: 0.76rem;
+  font-weight: 400;
+}
+
+.fg input, .fg textarea {
+  background: var(--bg2);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 0.95rem 1.2rem;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  resize: vertical;
+  font-family: var(--fb);
+}
+
+.fg input:focus, .fg textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.1);
+}
+
+/* Validation Highlights */
+.fg input.invalid, .fg textarea.invalid {
+  border-color: var(--accent4) !important;
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.12) !important;
+}
+
+.fg input.valid, .fg textarea.valid {
+  border-color: var(--accent3) !important;
+}
+
+.ferr {
+  font-size: 0.74rem;
+  color: var(--accent4);
+  min-height: 1.1rem;
+  margin-top: 0.1rem;
+  font-weight: 600;
+}
+
+.btn-submit {
+  min-width: 190px;
+  justify-content: center;
+  align-self: flex-start;
+}
+
+.btn-submit:disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.spinner-loader {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Status Banner overlay */
+.fstatus-banner {
+  padding: 0.85rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  animation: slideUpIn 0.3s ease;
+}
+
+@keyframes slideUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fstatus-banner.success {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: var(--accent3);
+}
+
+.fstatus-banner.error {
+  background: rgba(244, 63, 94, 0.08);
+  border: 1px solid rgba(244, 63, 94, 0.22);
+  color: var(--accent4);
+}
+
+.fstatus-banner.sending {
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: var(--accent);
+}
+
+.fnote {
+  font-size: 0.75rem;
+  color: var(--text3);
+  line-height: 1.5;
+}
+
+.fnote strong {
+  color: var(--text2);
+}
+
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .frow {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+  .cform {
+    padding: 1.5rem;
+  }
+}

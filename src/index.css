@@ -1,0 +1,281 @@
+/* ════════════════════════════════════════════════════
+   THEME DESIGN SYSTEM (HSL)
+   ════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+
+:root {
+  --fh: 'Syne', sans-serif;
+  --fb: 'DM Sans', sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg: #030712;
+  --bg2: #0b0f19;
+  --bg3: #111827;
+  --card: #0f172a;
+  --card2: #1e293b;
+  --card3: #334155;
+  --border: rgba(56, 189, 248, 0.08);
+  --border2: rgba(56, 189, 248, 0.16);
+  --border3: rgba(56, 189, 248, 0.28);
+  --text: #f3f4f6;
+  --text2: #94a3b8;
+  --text3: #64748b;
+  --accent: #38bdf8;
+  --accent-rgb: 56, 189, 248;
+  --accent2: #818cf8;
+  --accent2-rgb: 129, 140, 248;
+  --accent3: #34d399;
+  --accent4: #fb7185;
+  --accent5: #f59e0b;
+  --nav-bg: rgba(3, 7, 18, 0.85);
+  --shadow: rgba(0, 0, 0, 0.4);
+  --hero-bg: linear-gradient(135deg, #030712 0%, #0d0926 40%, #150a2b 70%, #030712 100%);
+  --glow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg2: #f1f5f9;
+  --bg3: #e2e8f0;
+  --card: #ffffff;
+  --card2: #f8fafc;
+  --card3: #f1f5f9;
+  --border: rgba(15, 23, 42, 0.06);
+  --border2: rgba(15, 23, 42, 0.12);
+  --border3: rgba(15, 23, 42, 0.2);
+  --text: #0f172a;
+  --text2: #475569;
+  --text3: #64748b;
+  --accent: #2563eb;
+  --accent-rgb: 37, 99, 235;
+  --accent2: #4f46e5;
+  --accent2-rgb: 79, 70, 229;
+  --accent3: #10b981;
+  --accent4: #f43f5e;
+  --accent5: #d97706;
+  --nav-bg: rgba(248, 250, 252, 0.85);
+  --shadow: rgba(15, 23, 42, 0.05);
+  --hero-bg: linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #e0e7ff 100%);
+  --glow: 0 0 15px rgba(37, 99, 235, 0.12);
+}
+
+/* ════════════════════════════════════════════════════
+   RESET & GLOBAL LAYOUT
+   ════════════════════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--fb);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--accent), var(--accent2));
+  border-radius: 4px;
+}
+
+/* Section styling */
+.section {
+  padding: 8rem 8% 8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.si {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.slbl {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.slbl::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.stitle {
+  font-family: var(--fh);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 3.5rem;
+  letter-spacing: -0.02em;
+}
+
+.stitle span {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border2), transparent);
+  position: relative;
+  z-index: 1;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.95rem 2rem;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 18px rgba(129, 140, 248, 0.25);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent2), var(--accent));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(129, 140, 248, 0.4);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text2);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.95rem 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border2);
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-3px);
+  background: rgba(var(--accent-rgb), 0.05);
+}
+
+/* Hide default cursor on desktop since custom cursor is used */
+/* @media (min-width: 1025px) {
+  body, a, button, input, textarea, select, [role="button"] {
+    cursor: none !important;
+  }
+} */
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE LAYOUTS
+   ════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .section {
+    padding: 6rem 5% 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 5% 5rem;
+  }
+}

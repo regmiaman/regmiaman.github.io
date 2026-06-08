@@ -1,0 +1,51 @@
+.cur-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s, background 0.2s, width 0.2s, height 0.2s;
+  will-change: left, top, transform;
+}
+
+.cur-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, border-color 0.3s, opacity 0.3s;
+  opacity: 0.6;
+  will-change: left, top, width, height;
+}
+
+/* Hover scales dot, expands ring */
+.cur-dot.hov {
+  transform: translate(-50%, -50%) scale(2.5);
+  background: var(--accent2);
+}
+
+.cur-ring.hov {
+  width: 55px;
+  height: 55px;
+  border-color: var(--accent2);
+  opacity: 0.35;
+}
+
+/* Click shrinks dot and ring */
+.cur-dot.clk {
+  transform: translate(-50%, -50%) scale(0.4);
+}
+
+.cur-ring.clk {
+  width: 20px;
+  height: 20px;
+  border-color: var(--accent3);
+  opacity: 0.8;
+}
