@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
+import LocationMap from './LocationMap';
 import './Contact.css';
 
 // Load config from Vite environment variables with original placeholders as fallbacks
@@ -209,6 +210,7 @@ const Contact = () => {
                   <div className="cval">Kathmandu, Nepal</div>
                 </div>
               </div>
+              <LocationMap />
             </div>
           </div>
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageSquare, Send } from 'lucide-react';
+import { MessageSquare, Send, X } from 'lucide-react';
 import './Chatbot.css';
 
 const CHAT_RESP = {
@@ -102,6 +102,13 @@ const Chatbot = () => {
             <p>Online</p>
           </div>
           <div className="chat-online"></div>
+          <button 
+            className="chat-close-btn interactive" 
+            onClick={handleToggle}
+            aria-label="Close chat"
+          >
+            <X size={18} />
+          </button>
         </div>
 
         <div className="chat-msgs">

@@ -1,7 +1,7 @@
 .theme-toggle-w {
   position: fixed;
   top: 50%;
-  right: 1.5rem;
+  right: 0rem;
   z-index: 800;
   transform: translateY(-50%);
   display: flex;
@@ -48,7 +48,7 @@
   .theme-toggle-w {
     top: auto;
     bottom: 5.5rem;
-    right: 1rem;
+    right: 0rem;
     flex-direction: row;
     border-radius: 30px;
     padding: 0.4rem 0.5rem;

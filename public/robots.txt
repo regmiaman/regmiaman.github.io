@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /*.json
+Disallow: /*.config.*
+
+# Crawl delay to avoid overloading the server
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://regmiaman.github.io/regmiaman.github.io/sitemap.xml
+
+# Allow all bots access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
