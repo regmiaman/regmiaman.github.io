@@ -49,7 +49,7 @@ const Footer = () => {
         <button className="interactive" onClick={() => scrollToSection('contact')}>Contact</button>
       </div>
 
-      <p className="ftxt">Designed &amp; built with ❤️ by Aman Regmi</p>
+      <p className="ftxt">Designed &amp; built by Aman Regmi</p>
       <p className="fcopy">© {currentYear} Aman Regmi · Kathmandu, Nepal</p>
     </footer>
   );
